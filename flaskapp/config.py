@@ -4,9 +4,22 @@ import os
 class Config:
     # Secret Key
     SECRET_KEY = 'dfba6ca3b6aecf67cbcaecb4e6a65ec5'
+    WTF_CSRF_ENABLED = True
+
+    # Open Id Providers
+    OPENID_PROVIDERS = [
+        {'name': 'Google', 'url': 'https://www.google.com/accounts/o8/id'},
+        {'name': 'Yahoo', 'url': 'https://me.yahoo.com'},
+        {'name': 'AOL', 'url': 'http://openid.aol.com/<username>'},
+        {'name': 'Flickr', 'url': 'http://www.flickr.com/<username>'},
+        {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'}]
 
     # Database setup
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'
+    BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'site.db')
+    SQLALCHEMY_MIGRATE_REPO = os.path.join(BASE_DIR, 'db_repository')
+
+    #'sqlite:///site.db'
 
     # Mail setup
     MAIL_SERVER = 'smtp.googlemail.com'

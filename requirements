@@ -4,6 +4,7 @@ flask-bcrypt
 flask-sqlalchemy
 Pillow
 flask-email
+pip install Flask-Migrate
 
 bcrypt==3.1.4
 blinker==1.4
