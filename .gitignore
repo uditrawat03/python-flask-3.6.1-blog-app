@@ -6,3 +6,4 @@ pyvenv.cfg
 /flaskapp/posts/__pycache__
 /flaskapp/main/__pycache__
 /flaskapp/errors/__pycache__
+__pycache__
